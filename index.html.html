@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sadaf | Data Analyst</title>
+<style>
+body {font-family: Arial; margin:0; background:#f5f7fa;}
+header {background:#1e293b; color:white; padding:20px; text-align:center;}
+section {padding:30px; margin:20px; background:white; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1);} 
+h2 {color:#1e293b;}
+button {padding:10px 15px; margin-top:10px; background:#2563eb; color:white; border:none; border-radius:5px; cursor:pointer;}
+input, textarea {width:100%; padding:8px; margin:5px 0;}
+.project {border:1px solid #ddd; padding:10px; margin:10px 0; border-radius:5px;}
+</style>
+</head>
+<body>
+
+<header>
+<h1 contenteditable="true">Sadaf Zafar</h1>
+<p contenteditable="true">Data Analyst | Excel | Power BI | SQL</p>
+</header>
+
+<section>
+<h2>About Me</h2>
+<p contenteditable="true">I help businesses turn raw data into meaningful insights using dashboards and reports.</p>
+<button onclick="toggleEdit(this)">Edit</button>
+</section>
+
+<section>
+<h2>Skills</h2>
+<ul contenteditable="true">
+<li>Excel (Advanced)</li>
+<li>Power BI</li>
+<li>SQL</li>
+<li>Data Cleaning</li>
+</ul>
+<button onclick="toggleEdit(this)">Edit</button>
+</section>
+
+<section>
+<h2>Projects</h2>
+<div id="projects">
+<div class="project" contenteditable="true">Add your project details here</div>
+</div>
+<button onclick="addProject()">+ Add Project</button>
+</section>
+
+<section>
+<h2>Services</h2>
+<ul contenteditable="true">
+<li>Dashboard Creation</li>
+<li>Data Analysis</li>
+<li>Report Building</li>
+</ul>
+<button onclick="toggleEdit(this)">Edit</button>
+</section>
+
+<section>
+<h2>Contact</h2>
+<p contenteditable="true">Email: your@email.com</p>
+<p contenteditable="true">WhatsApp: 03XXXXXXXXX</p>
+<button onclick="toggleEdit(this)">Edit</button>
+</section>
+
+<script>
+function addProject() {
+  let div = document.createElement("div");
+  div.className = "project";
+  div.contentEditable = "true";
+  div.innerText = "New Project - describe here";
+  document.getElementById("projects").appendChild(div);
+}
+
+function toggleEdit(btn) {
+  let section = btn.parentElement;
+  let editable = section.querySelectorAll("[contenteditable]");
+  editable.forEach(el => {
+    el.contentEditable = el.contentEditable === "true" ? "false" : "true";
+  });
+}
+</script>
+
+</body>
+</html>
